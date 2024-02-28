@@ -82,6 +82,16 @@ WSGI_APPLICATION = 'ecommerce.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.getenv('POSTGRES_DATABASE'),
+        'USER': os.getenv('POSTGRES_USER'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
+        'HOST': os.getenv('POSTGRES_HOST'),
+        'PORT': '5432',
+    }
+}
 
 DATABASES = {
     'default': dj_database_url.config(default=os.getenv("postgres://default:oH9CVWAG0cLm@ep-old-surf-a4cz5wow.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require"), conn_max_age=600)

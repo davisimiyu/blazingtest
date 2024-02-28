@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Blazing Barry</title>
+  <style media="screen">
+    .footer{
+      position: fixed;
+    }
+    .go-green {
+      background-color: #3fcd7f;
+      color: white;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .go-green img {
+      width: 100px;
+      height: auto;
+    }
+    .go-green h2, .go-green p {
+      margin: 20px 0;
+    }
+  </style>
+</head>
+
+<body style="background-color:#f7f7f7;">
+  {%if request.user.is_authenticated%}
+    {% include "ecom/customer_navbar.html" %}
+  {%else%}
+    {% include "ecom/navbar.html" %}
+  {%endif%}
+  <br><br><br>
+  <div class="go-green">
+    <img class="logo" src="{% static 'images/b.png' %}" alt="Go Green Logo">
+    <h2>Go Green Initiative</h2>
+    <p>Go Green is an initiative started by Blazing Barrys Youth Coffee to address the effects of climate change on the coffee industry. For every coffee package purchased from us, a tree is planted.</p>
+    <p>This initiative contributes to carbon sequestration by utilizing carbon dioxide for photosynthesis. Trees store carbon above ground in trunks and branches, as well as below ground in roots and the soil. Carbon sequestration plays a crucial role in securing carbon dioxide, preventing it from entering the Earth's atmosphere.</p>
+    <p>By promoting sustainable coffee farming practices, we strive to create a better climate for future generations.</p>
+  </div>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+  {% include "ecom/footer.html" %}
+</body>
+
+</html>

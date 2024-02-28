@@ -4,3 +4,5 @@ sqlparse==0.3.1
 xhtml2pdf
 intasend-python
 django-mpesa
+psycopg2
+psycopg2-binary
